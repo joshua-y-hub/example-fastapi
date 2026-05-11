@@ -22,8 +22,6 @@ if __name__ == "__main__":
         port=int(os.getenv("PORT", 10000))
     )
 
-
-app = FastAPI()
 origins = ["*"] 
 app.add_middleware(
     CORSMiddleware,
