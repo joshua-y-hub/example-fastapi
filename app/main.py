@@ -4,26 +4,26 @@ from .database import engine
 from .routers import post,user,auth,vote
 from .config import settings
 from fastapi.middleware.cors import CORSMiddleware
-import uvicorn
+import os
 from fastapi import FastAPI
-# ... your other imports
+import uvicorn
 
 app = FastAPI()
 
-# ... your routes
+# Your routes...
 
+# This should be at the bottom of main.py
 if __name__ == "__main__":
     uvicorn.run(
-        "app.main:app", 
+        app, 
         host="0.0.0.0", 
-        port=8000, 
-        reload=True
+        port=int(os.getenv("PORT", 10000))
     )
 
 # models.Base.metadata.create_all(bind=engine) 
 
 
-app = FastAPI()
+
 origins = ["*"] 
 app.add_middleware(
     CORSMiddleware,
