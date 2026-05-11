@@ -4,6 +4,21 @@ from .database import engine
 from .routers import post,user,auth,vote
 from .config import settings
 from fastapi.middleware.cors import CORSMiddleware
+import uvicorn
+from fastapi import FastAPI
+# ... your other imports
+
+app = FastAPI()
+
+# ... your routes
+
+if __name__ == "__main__":
+    uvicorn.run(
+        "app.main:app", 
+        host="0.0.0.0", 
+        port=8000, 
+        reload=True
+    )
 
 # models.Base.metadata.create_all(bind=engine) 
 
