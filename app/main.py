@@ -20,9 +20,22 @@ if __name__ == "__main__":
         port=int(os.getenv("PORT", 10000))
     )
 
-# models.Base.metadata.create_all(bind=engine) 
+# models.Base.metadata.create_all(bind=engine)
+import os
+import uvicorn
+from fastapi import FastAPI
 
+app = FastAPI()
 
+# Your routes...
+
+# This should be at the bottom of main.py
+if __name__ == "__main__":
+    uvicorn.run(
+        app, 
+        host="0.0.0.0", 
+        port=int(os.getenv("PORT", 10000))
+    )
 
 origins = ["*"] 
 app.add_middleware(
