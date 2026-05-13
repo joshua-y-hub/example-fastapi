@@ -10,7 +10,7 @@ def test_root():
     assert res.status_code == 200
 
 def test_create_user():
-    res = client.post("/users/", json={ "email": "jonny@example.com","password": "pass123"})
+    res = client.post("/users/", json={ "email": "lenny@example.com","password": "pass123"})
     print(res.json())
     assert res.status_code == 201
   
