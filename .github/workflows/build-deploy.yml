@@ -4,6 +4,15 @@ on: [push,pull_request]
 
 jobs:
   job1:
+    env:
+      DATABASE_HOSTNAME=localhost
+      DATABASE_PORT=5432
+      DATABASE_PASSWORD=12345
+      DATABASE_NAME=fastapi
+      DATABASE_USERNAME=postgres
+      SECRET_KEY=d853d30e59a8f85870b06ae8804521471e23fe329ac01007132752626ff6b857
+      ALGORITHM=HS256
+      ACCESS_TOKEN_EXPIRE_MINUTES=30 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
