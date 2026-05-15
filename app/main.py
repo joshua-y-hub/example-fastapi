@@ -10,9 +10,7 @@ import uvicorn
 
 app = FastAPI()
 
-# Your routes...
 
-# This should be at the bottom of main.py
 if __name__ == "__main__":
     uvicorn.run(
         app, 
